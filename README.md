@@ -18,6 +18,20 @@ ToDoApp es una aplicación web simple y fácil de usar, diseñada para ayudar a 
 4. Ejecuta `flask run` para iniciar la aplicación en modo de desarrollo.
 5. Abre tu navegador y visita http://localhost:5000 para comenzar a usar la aplicación.
 
+## Despliegue en PythonAnywhere
+
+Para hacer un deploy de esta aplicación en [PythonAnywhere](https://www.pythonanywhere.com/), sigue los siguientes pasos:
+
+1. Regístrate en [PythonAnywhere](https://www.pythonanywhere.com/) y crea una nueva cuenta o inicia sesión si ya tienes una.
+2. Ve a la sección "Web" y crea una nueva aplicación web.
+3. Elige "Flask" como el framework y selecciona la versión de Python que deseas utilizar.
+4. En la pestaña "Code", haz clic en "Go to Directory" junto a "Source code" y carga los archivos de tu aplicación o clona el repositorio.
+5. Asegúrate de que el archivo `requirements.txt` esté en el directorio raíz de tu aplicación y ejecuta `pip install -r requirements.txt` en la consola de PythonAnywhere para instalar las dependencias.
+6. En la pestaña "Web", en la sección "Code", actualiza el campo "WSGI configuration file" con la ruta de tu archivo de configuración WSGI.
+7. Reinicia tu aplicación web haciendo clic en el botón verde "Reload".
+
+La aplicación ToDoApp ahora debería estar disponible en [https://juanmanuelroccia.pythonanywhere.com/](https://juanmanuelroccia.pythonanywhere.com/). Visita este enlace para comenzar a utilizar la aplicación.
+
 ## Contribuciones
 
 Las contribuciones al proyecto son bienvenidas. Si deseas agregar nuevas características, mejorar el diseño o solucionar errores existentes, no dudes en enviar un pull request.

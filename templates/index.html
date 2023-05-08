@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple To-Do List</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+<body>
+  <h1>Simple To-Do List</h1>
+  <form method="post">
+    <input type="text" name="task" placeholder="Add a task...">
+    <button type="submit">Add</button>
+  </form>
+  <p>{{ current_input }}</p>
+  	<ul>
+	  {% for task in todo_list %}
+		  <li {% if task.done %}style="text-decoration: line-through;"{% endif %}>
+		    {{ task.text }}
+		    <button data-id="{{ loop.index0 }}" class="mark-done">Mark as done</button>
+		    <button data-id="{{ loop.index0 }}" class="delete">Delete</button>
+		  </li>
+	  {% endfor %}
+	</ul>
+
+	<script>
+		  document.addEventListener('DOMContentLoaded', () => {
+		    const deleteButtons = document.querySelectorAll('.delete');
+		    const markDoneButtons = document.querySelectorAll('.mark-done');
+
+		    deleteButtons.forEach((button) => {
+		      button.addEventListener('click', () => {
+		        const taskId = button.getAttribute('data-id');
+		        const form = document.createElement('form');
+		        form.method = 'POST';
+		        form.action = `/delete/${taskId}`;
+		        document.body.appendChild(form);
+		        form.submit();
+		      });
+		    });
+
+		    markDoneButtons.forEach((button) => {
+		      button.addEventListener('click', () => {
+		        const taskId = button.getAttribute('data-id');
+		        const form = document.createElement('form');
+		        form.method = 'POST';
+		        form.action = `/mark_done/${taskId}`;
+		        document.body.appendChild(form);
+		        form.submit();
+		      });
+		    });
+		  });
+	</script>
+</body>
+</html>

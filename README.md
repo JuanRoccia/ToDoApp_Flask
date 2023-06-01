@@ -14,7 +14,7 @@ ToDoApp es una aplicación web simple y fácil de usar, diseñada para ayudar a 
 
 1. Clona este repositorio en tu máquina local.
 2. Crea un entorno virtual de Python e instala las dependencias necesarias utilizando `pip install -r requirements.txt`.
-3. Configura las variables de entorno `FLASK_APP` y `FLASK_ENV` según las instrucciones proporcionadas en la documentación.
+3. Configura las variables de entorno `FLASK_APP` y `FLASK_ENV` según las instrucciones proporcionadas en la [documentación](https://flask.palletsprojects.com/en/2.1.x/config/#configuring-from-environment-variables) o [ChatGPT](https://chat.openai.com/share/c8662316-cd35-443c-a62d-88d43a4346b0).
 4. Ejecuta `flask run` para iniciar la aplicación en modo de desarrollo.
 5. Abre tu navegador y visita http://localhost:5000 para comenzar a usar la aplicación.
 
